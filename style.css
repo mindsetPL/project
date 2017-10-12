@@ -1,0 +1,278 @@
+/*General Design*/
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    color: #054322;
+    background-color: whitesmoke;
+    margin: 0px;
+    padding: 0px;
+}
+#main {
+    padding: 0px 20px;
+    text-align: center;
+}
+#footer {
+    text-align: center;
+    background-color: #054322;
+    color: whitesmoke;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+}
+h1,h2,h3,h4 {
+    font-family: 'Dancing Script', cursive;
+}
+
+/*Navigation*/
+#navbar {
+    background-color: #054322;
+    margin: 0;
+    overflow: hidden;
+}
+#mainTitle {
+    text-align: left;
+    line-height: 1.5em;
+    margin: 0 auto 0 0;
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+    vertical-align: middle;
+}
+#mainTitle a {
+    vertical-align: middle;
+    text-decoration: none;
+    color: white;
+}
+nav ul {
+    margin: 0;
+    display: flex;
+}
+nav ul li {
+    display: inline-block;
+    list-style-type: none;
+}
+.navLink {
+    color: whitesmoke;
+    display: block;
+    text-decoration: none;
+    line-height: 3.4em;
+    padding: 1em 2em;
+    transition-duration: .5s;
+}
+.navLink:hover {
+    background-color: whitesmoke;
+    color: #0b6623;
+    transition-duration: 0.5s;
+}
+
+#main h1 {
+    margin: 10px 0 0 0;
+    font-family: 'Dancing Script', cursive;
+    font-size: 60px;
+}
+#quote {
+    margin-top: 0;
+    font-family: 'Dancing Script', cursive;
+}
+
+/*Breathe*/
+#circle {
+    width: 50px;
+    height: 50px;
+    background: yellow;
+    border-radius: 50%;
+}
+
+/*Plan*/
+#toDo {
+    margin: 0 auto;
+    border-collapse: separate;
+    border-spacing: 20px 0px;
+}
+
+#modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+#modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+#modalBtn {
+    margin-top: 10px;
+    display: inline-block;
+}
+label {
+    display: none;
+}
+.timeAdd {
+    width: 65px;
+}
+.form-item {
+    margin-top: 10px;
+}
+.health-check {
+	-webkit-appearance: none;
+	background-color: rgba(108, 52, 4 ,0.2);
+	border: 2px solid #6C3404;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+	padding: 10px;
+	border-radius: 5px;
+	display: inline-block;
+	position: relative;
+}
+.passion-check {
+	-webkit-appearance: none;
+	background-color: rgba(255, 0, 0, 0.2);
+	border: 2px solid #ff0000;
+	padding: 10px;
+	border-radius: 5px;
+	display: inline-block;
+	position: relative;
+}
+.growth-check {
+	-webkit-appearance: none;
+	background-color: rgba(57, 174, 64, 0.2);
+	border: 2px solid #39ae40;
+	padding: 10px;
+	border-radius: 5px;
+	display: inline-block;
+	position: relative;
+}
+.contribution-check {
+	-webkit-appearance: none;
+	background-color: rgba(37, 95, 255, 0.2);
+	border: 2px solid #2563FF;
+	padding: 10px;
+	border-radius: 5px;
+	display: inline-block;
+	position: relative;
+}
+.relationships-check {
+	-webkit-appearance: none;
+	background-color: rgba(130, 7, 167, 0.2);
+	border: 2px solid #8207A7;
+	padding: 10px;
+	border-radius: 5px;
+	display: inline-block;
+	position: relative;
+}
+.checkboxes:checked:after {
+	content: '\2714';
+	font-size: 14px;
+	position: absolute;
+	top: 1px;
+	left: 3px;
+	color: #054322;
+}
+.delTask {
+    font-size: 26px;
+    margin: 0 0 0 25px;
+}
+.close {
+    color: #054322;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+.addBtn {
+    padding: 5px 10px;
+    background: transparent;
+    border: 2px solid #054322;
+    color: #054322;
+    border-radius: 15%;
+    -webkit-border-radius: 12px; 
+    text-align: center;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.5s;
+    display: inline-block;
+    margin-top: 10px;
+    
+}
+
+.addBtn:hover {
+    background-color: #054322;
+    color: whitesmoke;
+}
+
+/*new from Sarah*/
+#breatheLink {
+    position: fixed;
+    left: 62px; /*12+ circ*/
+    top: 327px; /*27+ circ*/
+}
+
+#planLink {
+    position: fixed;
+    left: 223px; /*23+ circ*/
+    top: 327px; /*27+ circ*/
+}
+
+#striveLink {
+    position: fixed;
+    left: 370px; /*20+ circ*/
+    top: 327px; /*27+ circ*/ 
+    
+}
+
+#reflectLink {
+    position: fixed;
+    left: 517px; /*17+ circ*/
+    top: 327px;
+}
+
+.pageLink {
+    text-decoration: none;
+    border-color: none;
+    color: white;
+    z-index: 5;
+}
+
+.indexCircle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+#breatheCirc {
+    position: fixed;
+    background-color: #5E0C23;
+    left: 50px;
+    top: 300px;
+}
+
+#planCirc {
+    position: fixed;
+    background-color: goldenrod;
+    left: 200px;
+    top: 300px;
+}
+
+#striveCirc {
+    position: fixed;
+    background-color: #87A485;
+    left: 350px;
+    top: 300px;
+}
+
+#refCirc {
+    position: fixed;
+    background-color: #196B87;
+    left: 500px;
+    top: 300px;
+}
