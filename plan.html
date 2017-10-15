@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+    <title>Plan</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Nunito:700|Open+Sans" rel="stylesheet">
+    <script type="text/javascript" src="toDo.js"></script>
+    <script type="text/javascript" src="backtoHome.js"></script>
+    <script>
+        function showAdd() {
+            document.getElementById('modal').style.display = 'block';
+        }
+        function closeAdd(){
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
+</head>
+<body onload="backtoHome()">
+    <nav id="navbar">
+        <ul>
+            <li id="mainTitle"><a href="index.html"><img src="images/msLogoV1.png"  width="80px;" style="vertical-align: middle; margin-right: 5px;"/>MindSet</a></li>
+            <li><a href="breathe.html" class="navLink">Breathe</a></li>
+            <li><a href="plan.html" class="navLink">Plan</a></li>
+        </ul>
+    </nav>
+    <section id="main">
+        <h1>Plan</h1>
+        <p id="quote">The journey of a thousand miles begins with a single step.</p>
+        <div id="modal">
+            <div id="modal-content" class="center">
+                <h2 style="display: inline-block">Add a Task</h2>
+                <span class="close" onclick="closeAdd()">&times;</span>
+                <br>
+                <label>Tenant</label>
+                <select class="form-item" name="tenant" id="tenantIn">
+                        <option disabled selected value="blank">Tenant</option>
+                        <option value="health">Health</option>
+                        <option value="relationships">Relationships</option>
+                        <option value="growth">Growth</option>
+                        <option value="passion">Passion</option>
+                        <option value="contribution">Contribution</option>
+                </select>
+                <br>
+                <label>Priority</label>
+                <select class="form-item" name="priority" id="priorityIn">
+                        <option disabled selected value="blank">Priority</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                </select>
+                <br>
+                <label>Task Description</label>
+                <input class="form-item" type="text" placeholder="Task" id="taskIn">
+                <br>
+                <label>Due Date</label>
+                <input class="form-item" type="date" placeholder="Due Date (mm/dd)" id="dateIn" pattern="[0-9]{2}/[0-9]{2}">
+                <br>
+                <label>Time Spent</label>
+                <input class="form-item" type="text" placeholder="Time Spent in Minutes" id="minIn">
+                <br>
+                <span id="modalBtn" class="addBtn" onclick="newTask()">Add</span>
+            </div>
+        </div>
+        <div id="container">
+            
+                <table id="toDo">
+                    
+                </table>
+            <span class="addBtn" onclick="showAdd()">Add Task</span>
+        </div>
+        
+    </section>
+    <section id="footer">
+        <p>Designed by Sarah Overton and Drew Lytle</p>
+    </section>
+    
+</body>
