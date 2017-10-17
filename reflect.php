@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <head>
     <title>Reflect</title>
@@ -9,7 +10,7 @@
 <body onload="backtoHome()">
     <?php
         function checkError() {
-            if (!isSet($_POST["good"])) {
+            if ($_POST['good'] == "" && isset($_SESSION['loaded'])) {
                 $err = "You must say what went well. ";
             }
             else {
@@ -32,7 +33,7 @@
         <div class="container">
             <form name="reflection" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                 <span class="error">
-                    <?php if(isSet($_GET['submit'])) {
+                    <?php if(isset($_POST['submit'])) {
                         echo checkError();
                     }
                     ?>
@@ -49,5 +50,7 @@
     <section id="footer">
         <p>Designed by Sarah Overton and Drew Lytle</p>
     </section>
-    
+    <?php 
+        $_SESSION['loaded'] = 1;
+    ?>
 </body>
