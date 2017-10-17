@@ -1,5 +1,4 @@
 <?php
-<<<<<<< HEAD
 // define variables and set to empty values
 $error = "";
 
@@ -12,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $err = $err + "You must say what you could change. "
   }
 }
-=======
+
 
 if (isSet($_POST('good')))
 {
@@ -59,6 +58,4 @@ else
     echo "0 words <br>"
 }
 
-
->>>>>>> 3c70df6ac06eabc8f71203fc47faffad2b0a03ba
 ?>
