@@ -74,8 +74,16 @@
                         echo $_POST['good'];
                     }
                     ?></textarea>
-                <textarea rows="15" placeholder="What could have gone better?" name="bad"></textarea>
-                <textarea rows="15" placeholder="What can I change?" name="ugly"></textarea>
+                <textarea rows="15" placeholder="What could have gone better?" name="bad"><?php 
+                    if (isset($_POST['bad']) && $_POST['bad']!="" && $masterErr!=""){
+                        echo $_POST['bad'];
+                    }
+                    ?></textarea>
+                <textarea rows="15" placeholder="What can I change?" name="ugly"><?php 
+                    if (isset($_POST['ugly']) && $_POST['ugly']!="" && $masterErr!=""){
+                        echo $_POST['ugly'];
+                    }
+                    ?></textarea>
                 <input type="submit" class="addBtn" value="Submit" name="submit">
             </form>
             
