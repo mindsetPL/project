@@ -20,6 +20,9 @@ if (isSet($_POST('good')))
     $words = preg_split('[\s]+/', $_POST['good'], -1, PREG_SPLIT_NO_EMPTY);
     
     $count = count($words);
+    if ($count >= 250){
+        echo "Too many words!";
+    }
     /*https://stackoverflow.com/questions/17206468/php-reading-word-by-word*/          
     echo $count+" words <br>";
 }
@@ -35,6 +38,9 @@ if (isSet($_POST('bad')))
     $words = preg_split('[\s]+/', $_POST['bad'], -1, PREG_SPLIT_NO_EMPTY);
     
     $count = count($words);
+    if ($count >= 250){
+        echo "Too many words!";
+    }
        
     echo $count+" words <br>";
 }
@@ -50,6 +56,9 @@ if (isSet($_POST('ugly')))
     $words = preg_split('[\s]+/', $_POST['ugly'], -1, PREG_SPLIT_NO_EMPTY);
     
     $count = count($words);
+    if ($count >= 250){
+        echo "Too many words!";
+    }
        
     echo $count+" words <br>";
 }
