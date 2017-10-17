@@ -8,11 +8,11 @@ if (isSet($_POST('good')))
     
     $count = count($words);
     /*https://stackoverflow.com/questions/17206468/php-reading-word-by-word*/          
-    print $count+" words <br>";
+    echo $count+" words <br>";
 }
 else
 {
-    print "0 words <br>"
+    echo "0 words <br>"
 }
 
 if (isSet($_POST('bad')))
@@ -22,12 +22,12 @@ if (isSet($_POST('bad')))
     $words = preg_split('[\s]+/', $_POST['bad'], -1, PREG_SPLIT_NO_EMPTY);
     
     $count = count($words);
-    /*https://stackoverflow.com/questions/17206468/php-reading-word-by-word*/          
-    print $count+" words <br>";
+       
+    echo $count+" words <br>";
 }
 else
 {
-    print "0 words <br>"
+    echo "0 words <br>"
 }
 
 if (isSet($_POST('ugly')))
@@ -37,12 +37,12 @@ if (isSet($_POST('ugly')))
     $words = preg_split('[\s]+/', $_POST['ugly'], -1, PREG_SPLIT_NO_EMPTY);
     
     $count = count($words);
-    /*https://stackoverflow.com/questions/17206468/php-reading-word-by-word*/          
-    print $count+" words <br>";
+       
+    echo $count+" words <br>";
 }
 else
 {
-    print "0 words <br>"
+    echo "0 words <br>"
 }
 
 
