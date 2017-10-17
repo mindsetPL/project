@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <head>
-    <title>Plan</title>
+    <title>Reflect</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Nunito:700|Open+Sans" rel="stylesheet">
-    <?php include reflection.php; ?>
     <script type="text/javascript" src="backtoHome.js"></script>
 </head>
 <body onload="backtoHome()">
+    <?php
+        function checkError() {
+            if (!isSet($_POST["good"])) {
+                $err = "You must say what went well. ";
+            }
+            else {
+                $err = "";
+            }
+            return $err;
+        }
+
+    ?>
     <nav id="navbar">
         <ul>
             <li id="mainTitle"><a href="index.html"><img src="images/msLogoV1.png"  width="80px;" style="vertical-align: middle; margin-right: 5px;"/>MindSet</a></li>
@@ -19,12 +30,17 @@
         <h1>Reflect</h1>
         <p id="quote">What you think, you become; what you feel, you attract; what you imagine, you create.</p>
         <div class="container">
-            <form name="reflection" method="post">
-                <span class="error"><?php echo $error; ?></span>
-                <textarea rows="15" placeholder="What went well?" name="good"></textarea>
+            <form name="reflection" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                <span class="error">
+                    <?php if(isSet($_GET['submit'])) {
+                        echo checkError();
+                    }
+                    ?>
+                </span>
+                <textarea rows="15" name="good"></textarea>
                 <textarea rows="15" placeholder="What could have gone better?" name="bad"></textarea>
                 <textarea rows="15" placeholder="What can I change?" name="ugly"></textarea>
-                <input type="submit" class="addBtn" value="Submit">
+                <input type="submit" class="addBtn" value="Submit" name="submit">
             </form>
             
         </div>
