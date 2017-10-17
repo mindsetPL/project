@@ -9,15 +9,41 @@
 </head>
 <body onload="backtoHome()">
     <?php
-        function checkError() {
+        function checkGood() {
+            $good;
             if ($_POST['good'] == "" && isset($_SESSION['loaded'])) {
                 $err = "You must say what went well. ";
             }
             else {
                 $err = "";
+                $good=$_POST['good'];
+            }
+            return $err;
+            
+        }
+        function checkBad() {
+            $bad;
+            if ($_POST['bad'] == "" && isset($_SESSION['loaded'])) {
+                $err = "You must say what could've gone better. ";
+            }
+            else {
+                $err = "";
+                $bad=$_POST['bad'];
             }
             return $err;
         }
+        function checkUgly() {
+            $ugly;
+            if ($_POST['ugly'] == "" && isset($_SESSION['loaded'])) {
+                $err = "You must say what you can change. ";
+            }
+            else {
+                $err = "";
+                $ugly=$_POST['ugly'];
+            }
+            return $err;
+        }
+    
 
     ?>
     <nav id="navbar">
@@ -34,11 +60,20 @@
             <form name="reflection" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                 <span class="error">
                     <?php if(isset($_POST['submit'])) {
-                        echo checkError();
+                        $masterErr="";
+                        $masterErr.= checkGood();
+ 
+                        $masterErr.= checkBad();
+                        $masterErr.= checkUgly();
+                        echo $masterErr;
                     }
                     ?>
                 </span>
-                <textarea rows="15" name="good"></textarea>
+                <textarea rows="15" placeholder="What went well?" name="good"><?php 
+                    if (isset($_POST['good']) && $_POST['good']!="" && $masterErr!=""){
+                        echo $_POST['good'];
+                    }
+                    ?></textarea>
                 <textarea rows="15" placeholder="What could have gone better?" name="bad"></textarea>
                 <textarea rows="15" placeholder="What can I change?" name="ugly"></textarea>
                 <input type="submit" class="addBtn" value="Submit" name="submit">
