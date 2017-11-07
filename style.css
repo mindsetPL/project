@@ -256,9 +256,10 @@ label {
 }
 
 #reflectLink {
-    position: fixed;
+    position: fixed;  
     left: 517px; /*17+ circ*/
-    top: 327px;
+    top: 327px; /*27+ circ*/
+    
 }
 
 .pageLink {
@@ -273,27 +274,28 @@ label {
     height: 80px;
     border-radius: 50%;
     text-align: center;
+    position: fixed;
 }
 
 #breatheCirc {
     position: fixed;
     background-color: #5E0C23;
     left: 50px;
-    top: 300px;
+    top: 40%;
 }
 
 #planCirc {
     position: fixed;
     background-color: goldenrod;
     left: 200px;
-    top: 300px;
+    top: 40%;
 }
 
 #striveCirc {
     position: fixed;
     background-color: #87A485;
     left: 350px;
-    top: 300px;
+    top: 40%;
 }
 
 #refCirc {
